@@ -14,8 +14,8 @@ const ethereum = async (fn) => {
 const dom = (data,elementId) => {
     const lists = document.getElementById(elementId);
     const createLists = document.createElement("li");
-    const Value = parseInt(data.prices[0][1]);
-    createLists.innerText = (Value + "円");
+    const value = parseInt(data.prices[0][1]);
+    createLists.innerText = (`${value.toLocaleString()}` + "円");
     lists.appendChild(createLists);
 }
 
