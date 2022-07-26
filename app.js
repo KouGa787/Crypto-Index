@@ -13,10 +13,10 @@ const ethereum = async (fn) => {
 
 const dom = (data,elementId) => {
     const lists = document.getElementById(elementId);
-    const createLists = document.createElement("li");
+    const list = document.createElement("li");
     const value = parseInt(data.prices[0][1]);
-    createLists.innerText = (`${value.toLocaleString()}` + "円");
-    lists.appendChild(createLists);
+    list.innerText = (`${value.toLocaleString()}` + "円");
+    lists.appendChild(list);
 }
 
 bitcoin(dom)
