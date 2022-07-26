@@ -21,6 +21,3 @@ const dom = (data,elementId) => {
 
 bitcoin(dom)
 ethereum(dom)
-
-
-
