@@ -1,23 +1,15 @@
-const bitcoin = async (fn) => {
+// BTC price.
+( async () => {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=jpy&days=1");
     const data = await res.json();
-    const elementId = ("btc");
-    fn(data,elementId);
-}
-const ethereum = async (fn) => {
+    let value = data.prices[0][1];
+    btc.innerText = (`${value.toLocaleString()}` + "円");
+})();
+
+// ETH price.
+( async () => {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=jpy&days=1");
     const data = await res.json();
-    const elementId = ("eth");
-    fn(data,elementId);
-}
-
-const dom = (data,elementId) => {
-    const lists = document.getElementById(elementId);
-    const list = document.createElement("li");
-    const value = parseInt(data.prices[0][1]);
-    list.innerText = (`${value.toLocaleString()}` + "円");
-    lists.appendChild(list);
-}
-
-bitcoin(dom)
-ethereum(dom)
+    let value = data.prices[0][1];
+    eth.innerHTML = (`${value.toLocaleString()}` + "円");
+})();
